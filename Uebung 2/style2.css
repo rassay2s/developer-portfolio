@@ -1,0 +1,18 @@
+img{
+    border: solid thin;
+    padding: 5px;
+    max-width: 100%;
+    height: 100%;
+}
+
+/*#image img{*/
+/*  content-visibility: visible;*/
+/*}*/
+.press:not(:checked) ~ #image-container{
+  visibility: hidden;
+}
+input[type="checkbox"]{
+  width: 25px;
+  height: 25px;
+}
+

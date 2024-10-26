@@ -1,0 +1,15 @@
+.firsthead{
+  position: sticky;
+  top: 0;
+  border: thin solid black;
+  padding: .5em 70% .5em .1em;/*um grenze zu machen top right bottom left*/
+  /*padding-right :40em;*/
+  font-size:4em;
+  background-color: white;
+}
+p {
+  font-size: 2em;
+  background-color: mistyrose;
+  position: revert;
+
+}

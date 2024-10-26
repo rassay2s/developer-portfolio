@@ -1,0 +1,19 @@
+.Farbe{
+    background-color: white;
+    position: relative;
+    line-height: 2rem;
+}
+img{
+    border: solid red;
+    border-radius: 100px ;
+    width: 200px ;
+    height: 200px;
+
+}
+a{
+    color: blue;
+}
+::first-letter{
+    background-color: black;
+}
+
