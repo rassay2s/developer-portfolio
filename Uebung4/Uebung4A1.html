@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fibonacci</title>
+  <script>
+    function fibonacci(n, tab = []) {
+      if (tab[n] !== undefined) return tab[n];
+      if (n === 0) return 0;
+      if (n === 1) return 1;
+      tab[n] = fibonacci(n - 1, tab) + fibonacci(n - 2, tab);
+      return tab[n];
+    }
+    for (i = 0; i < 2000; i++) {
+      console.log(fibonacci(i));
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

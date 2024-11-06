@@ -1,0 +1,63 @@
+:root {
+    --headerColor: red;
+    --item2-1Color: rgb(22, 228, 1);
+    --item2-2Color: rgb(8, 113, 248);
+    --item2-3Color: rgb(241, 58, 237);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    /*width: 100vw;*/
+    grid-template: 1fr 1fr 60rem 1fr / 1fr;
+    grid-template-areas: "head" "sector1" "main" "sector2";
+
+}
+
+.header {
+    grid-area: head;
+    background-color: var(--headerColor);
+}
+
+.itemleft {
+    grid-area: sector1;
+    background-color: var(--item2-1Color);
+}
+
+.itemcenter {
+    grid-area: main;
+    background-color: var(--item2-2Color);
+}
+
+.itemright {
+    grid-area: sector2;
+    background-color: var(--item2-3Color);
+}
+
+@media screen and (min-width: 301px) and (max-width: 600px) {
+    body {
+        grid-template: 1fr 8fr 1fr / 1fr 4fr;
+        grid-template-areas: "head head" "sector1 main" "sector2 sector2";
+    }
+
+    .header, .itemleft, .itemcenter, .itemright {
+        margin: 0.2rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        grid-template: 1fr 8fr / 1fr 4fr 1fr;
+        grid-template-areas: "head head head" "sector1 main sector2";
+    }
+
+    .header, .itemleft, .itemcenter, .itemright {
+        margin: 0.2rem;
+    }
+}

@@ -1,0 +1,140 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  display: grid;
+  grid-template: 10% 1fr 15%/1fr;
+  grid-template-areas: "head" "section" "foot";
+}
+header{
+  grid-area: head;
+  background-color: #222222;
+  color: white;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template: 1fr / 1fr 120px 120px 120px 120px 1fr;
+  grid-template-areas: "h div1 div2 div3 div4 g";
+  font-size: 20px;
+}
+.div1{
+  grid-area: div1;
+  grid-column: 2;
+}
+.div2{
+  grid-area: div2;
+  grid-column: 3;
+}
+.div3{
+  grid-area: div3;
+  grid-column: 4;
+}
+.div4{
+  grid-area: div4;
+  grid-column: 5;
+}
+section{
+  grid-area: section;
+  background-color: #999999;
+  display: grid;
+  grid-template: 1fr 200px 1fr/ 1fr 1fr;
+  grid-template-areas: "head head" "imgd orderd" "order order";
+}
+img {
+  width: 380px;
+  border-radius: 7px;
+  border: 1px solid black;
+}
+.imgbox{
+  grid-area: imgd;
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+
+
+}
+.orderbox{
+  grid-area: orderd;
+  display: grid;
+  grid-column: 2;
+  grid-row: 2;
+  justify-items: center;
+  align-self: end ;
+  text-align: center;
+  font-size: 25px;
+  line-height: 70px;
+}
+button{
+  border-style: none;
+  background-color: chocolate;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 350px;
+  height: 50px;
+  color: white;
+  margin-top: 50px;
+}
+h1{
+  grid-area: head;
+  order: 1;
+  font-weight: bold;
+  display: grid;
+  justify-items: center;
+  font-size: 40px;
+  margin-top: 10px;
+}
+footer{
+  grid-area: foot;
+  background-color: rgba(5, 5, 28, 0.94);
+  color: white;
+  display: grid;
+  grid-template: 1fr 1fr 1fr /1fr 1fr 1fr;
+  grid-template-areas: "foot footiz foot " "foot footboox foot " "foot foot foot " ;
+
+
+}
+.footiz{
+  grid-area: footiz;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  font-size: 20px;
+
+
+}
+.footbox {
+  grid-area: footboox;
+  display: grid;
+  background-color: chocolate;
+  /*block-size: 2.5rem ;*/
+  grid-column: 2;
+  grid-row: 2;
+  border-radius: 10px;
+  justify-items: center;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  section{
+    grid-template: 1fr 200px 1fr 1fr/ 1fr ;
+    grid-template-areas: "head " "imgd" "orderd" "order";
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 599px) {
+  section{
+    grid-template: 50vh 50vh 50vh 50vh/ 1vh ;
+    grid-template-areas: "head " "imgd" "orderd" "order";
+  }
+  img{
+    width: 200px;
+  }
+  .imgbox{
+    justify-self: start;
+    align-self: start;
+  }
+
+}
