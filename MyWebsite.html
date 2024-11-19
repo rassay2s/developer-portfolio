@@ -2,40 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "style.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
     <title>About me</title>
 </head>
 
-<body style="background-color: aliceblue;">
-<section class="home" id="home"></section>
+<body>
+<section class="home" id="home">
 <nav>
-        <h2>About<span>Me</span></h2>
+        <h2 id="main">About<span>Me</span></h2>
     <ul>
         <li><a herf="#home">Home</a></li>
         <li><a herf="#home">Service</a></li>
         <li><a herf="#home">Help</a></li>
-        <li><a herf="#home">Contact Me</a></li>
+        <li><a herf="#home">ContactMe</a></li>
     </ul>
+    <form name="search" action="#">
+        <label for="search"></label>
+        <input id = "search" type="text" name="search" placeholder="search here">
+        <button id ="btn" type="submit"><span class="material-symbols-outlined">search</span></button>
+        </form>
     </nav>
-    <h1 style=" color: darkblue;"align="center">Hello there here is my website</h1>
-
-
 
     <hr>
+    <h1>Hello there here is my website</h1>
+    <p>my name is Rami, I'm studing at Hochschule Bonn Rhein Sieg and improving my programing skills in private.
+        I learned the important programing languages  like :<ul id="example"><li><a>LISP</a></li>,
+    <li><a>C++</a></li>,
+    <li><a>JAVA</a></li>, <li><a>JAVA-Script</a></li>,
+    <li><a>C</a></li>, <li><a>CSS</a></li> <a><span id = "text">and</span></a> <li><a>SQL</a></li></ul></p>
 
 
-    <div>
-        <!--bilder-->
-        <span style="position: fixed;top: 500px">
-        <img src = "https://t4.ftcdn.net/jpg/00/70/80/25/360_F_70802530_H8G1qBsSSH5m8PljFoy0xkcusgQ0vCt3.jpg">
-        <img src= "https://img.icons8.com/?size=100&id=32309&format=png&color=000000" alt = "Insta" >
-        </span>
-        <span style="position:relative; top: 700px; left: 20px">
-            <a href = "http://ramiassayed.live/">Website</a>
-           </span>
-            <a href = "https://www.instagram.com/al_rami.9/profilecard/?igsh=Mmw5NDUxOXNnMTd6">Instagram</a>
 
+
+<!--bilder-->
+    <div class ="social">
+        <a href="https://www.instagram.com/al_rami.9/profilecard/?igsh=Mmw5NDUxOXNnMTd6"><img src="fotos/img/instagram.png"></a>
+        <a href="#"><img src="fotos/img/facebook.png"></a>
+        <a href="#"><img src="fotos/img/linkedIn.png"></a>
+        <a href="#"><img src="fotos/img/github.png"></a>
     </div>
+<!--        <span style="position: fixed;top: 500px">-->
+<!--        <img src = "https://t4.ftcdn.net/jpg/00/70/80/25/360_F_70802530_H8G1qBsSSH5m8PljFoy0xkcusgQ0vCt3.jpg">-->
+<!--        <img src= "" alt = "Insta" >-->
+<!--        </span>-->
+<!--        <span style="position:relative; top: 700px; left: 20px">-->
+<!--            <a href = "http://ramiassayed.live/">Website</a>-->
+<!--           </span>-->
+<!--            <a href = "https://www.instagram.com/al_rami.9/profilecard/?igsh=Mmw5NDUxOXNnMTd6">Instagram</a>-->
+</section>
 </body>
 </html>
