@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta viewport="width=device-width, initial-scale=1.0">
+  <title>Zeichen Kette</title>
+</head>
+<body>
+  <h2>Parentheses check</h2>
+    <form name = "check"  action="#"  oninput= "checkParentheses(event)">
+      <label for="cehckText" >add your text to check: </label>
+      <textarea name ="parentheses" id ="cehckText" style="width: 80vw ; height: 20vh" placeholder="checker for ( ), { }, [ ] parentheses if you want more parentheses you can add it in the box below"></textarea>
+    </form>
+    <form name ="addPaar" action="#" onsubmit="choseOtherPaar(event)">
+      <label for= "addPaar">add other paar: </label>
+      <input name = "addBox" id="addPaar" type="text" placeholder="for example. < >" />
+      <input type="submit" value="addPaar"/>
+    </form>
+<script>
+    var open = ['[','(','{'];
+    var close = [']',')','}'];
+
+  function choseOtherPaar(e){
+    e.preventDefault();
+    let input = document.getElementById("addPaar").value.trim();
+    if(input.length >= 2){
+      let newOpen = input[0];
+      let newClose = input[input.length-1];
+    if(!open.includes(newOpen) && !close.includes(newClose)){
+      open.push(newOpen);
+      close.push(newClose);
+      }
+    }
+    document.forms["addPaar"]["addBox"].value= " ";
+    if (!input) return;
+  }
+
+  function checkParentheses(e){
+    e.preventDefault();
+    let stack = [];
+    let error = false;
+
+    let text = document.forms["check"]["parentheses"].value.trim();
+     for(let i =0; i < text.length; i++){
+       if(open.includes(text[i])){
+            stack.push(text[i]);
+       }else if(close.includes(text[i])){
+         let last = stack.pop();
+         if(open.indexOf(last) !== close.indexOf(text[i])){
+              error = true;
+              break;
+            }
+       }
+     }
+     if(error || stack.length > 0){
+       document.forms["check"]["parentheses"].style.backgroundColor = "red";
+        }else{
+          document.forms["check"]["parentheses"].style.backgroundColor = "white";
+        }
+  }
+  console.assert(checkParentheses({target: {value: '()'}}) === undefined, 'Test 1 failed');
+</script>
+</body>
+</html>
