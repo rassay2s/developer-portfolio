@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Performanz-Messungen von DOM-Operationen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<script>
+  const container = document.createElement('div');
+  const text = document.createElement('p');
+
+  text.innerText = 'this is a text to measure the performance of the DOM';
+
+  document.body.appendChild(container);
+
+  container.appendChild(text);
+
+  function measurePerformance(element, operation) {
+    let start = performance.now();
+    let end = 0;
+    for (let i = 0; i < 1000000; i++) {
+      operation(element);
+    }
+    end = performance.now();
+    return end - start;
+  }
+
+  const operation = {
+    innerHTML: (event) => event.innerHTML,
+    innerText: (event) => event.innerText,
+    textContent: (event) => event.textContent,
+    outerHTML: (event) => event.outerHTML
+  }
+
+  console.table({
+    innerHTML: measurePerformance(container, operation.innerHTML),
+    innerText: measurePerformance(container, operation.innerText),
+    textContent: measurePerformance(container, operation.textContent),
+    outerHTML: measurePerformance(container, operation.outerHTML)
+  })
+</script>
+</body>
+</html>

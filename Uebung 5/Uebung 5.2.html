@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RednerListe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Rednerliste</h1>
+<form name="list" action="#" onsubmit="addName(event)">
+  <label for="inputBox">Neuer Redner: </label>
+  <input name="name" type="text" id="inputBox"/>
+  <input type="submit" value="Hinzufügen"/>
+</form>
+<ul id="rednerListe">
+</ul>
+<script>
+  let activeTimer = null;
+  let intervals = {};
+
+  function formatTime(seconds) {
+    const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+    const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+    const secs = String(seconds % 60).padStart(2, '0');
+    return `${hrs}:${mins}:${secs} `;
+  }
+
+  function addName(e) {
+    e.preventDefault();
+    let name = document.forms["list"]["name"].value.trim();
+    document.forms["list"]["name"].value = ' ';
+    if (!name) return;
+
+    let rednerList = document.getElementById("rednerListe");
+    let li = document.createElement("li");
+    let paragraph = document.createElement("span");
+    paragraph.textContent = `${name} 00:00:00 `;
+    paragraph.setAttribute("id", `timer-${name}`);
+
+    let button = document.createElement("input");
+    button.setAttribute("value", "start!");
+    button.setAttribute("type", "button");
+
+    button.addEventListener('click', function () {
+      toggleTimer(name, paragraph, button);
+    });
+
+    li.appendChild(paragraph)
+    li.appendChild(button);
+    rednerList.appendChild(li);
+
+    button.click();
+  }
+
+  function toggleTimer(name, paragraph, button) {
+    if (activeTimer && activeTimer !== name) {
+      clearInterval(intervals[activeTimer].interval);
+      intervals[activeTimer].button.setAttribute("value", "start!");
+      intervals[activeTimer].isActive = false;
+    }
+    if (!intervals[name] || !intervals[name].isActive) {
+      if (!intervals[name]) {
+        intervals[name] = {time: 0, isActive: true, button};
+      } else {
+        intervals[name].isActive = true;
+      }
+      button.setAttribute("value", "stop!");
+      activeTimer = name;
+
+      intervals[name].interval = setInterval(() => {
+        intervals[name].time++;
+        paragraph.textContent = `${name} ${formatTime(intervals[name].time)}`;
+      }, 1000);
+    } else {
+      clearInterval(intervals[name].interval);
+      button.setAttribute("value", "start!");
+      intervals[name].isActive = false;
+      activeTimer = null;
+    }
+  }
+</script>
+</body>
+</html>
