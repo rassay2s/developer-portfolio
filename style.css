@@ -21,11 +21,8 @@ html{
     font-family: var(--schriftart);
     font-size: 16px;
     color: var(--nav-farbe);
-
 }
 .home{
-    width: 100%;
-    height: 100vh;
     background: #bdc3c7;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right,#bdc3c7 ,#2c3e50 );  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right,#bdc3c7 ,#2c3e50 );
@@ -44,9 +41,7 @@ span{
 }
 h1{
     margin-top: 3rem;
-    display: grid;
-    justify-items: center;
-
+    justify-self: center;
 
     color: var(--h1-farbe);
 /*"align="center"*/
@@ -55,15 +50,7 @@ h1{
     text-decoration: underline ;
     text-decoration-color: var(--nav-text-farbe);
 }
-img{
-
-
-}
-a{
-    color: var(--nav-text-farbe);
-}
-
-nav{
+.menu{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,30 +58,48 @@ nav{
     padding-left: var(--padding);
     padding-right: var(--padding);
 }
-nav ul li{
+.menu ul .a {
     list-style: none;
     display: inline-block;
     margin: 0.8rem 1.5rem;
 }
-nav ul li a{
+.menu ul .a a #search{
     text-decoration: none;
     color: var(--nav-farbe);
     text-transform: capitalize;
     cursor: pointer;
 }
-nav ul li a:hover{
+.menu ul .a a:hover{
     color: var(--nav-text-farbe);
     text-decoration: underline;
     transition: 0.4s;
 }
+.socialmedialogos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.social{
-    margin-top: 3.5rem;
+    position: sticky;
+
 }
-.social img{
-    display:flow;
-    margin-left: 0.5rem;
-    border-radius: var(--border-radius);
+
+.socialmedialogos .social{
+    display: flex;
+    flex-flow: column;
+    padding-top: 3rem;
+
+
+
+    /*padding-right: 70rem;*/
+
+
+}
+
+.socialmedialogos .social img{
+    /*display:flex;*/
+    /*margin-left: 0.5rem;*/
+    /*border-radius: var(--border-radius);*/
+    position: sticky;
     width: var(--bilder-breite);
     height: var(--bilder-hoehe);
 
@@ -104,12 +109,13 @@ nav ul li a:hover{
     color: #000;
     vertical-align: middle;
 }
-#search{
+.menu .searchbox{
     height: 1.65rem;
     border: none;
     background-color: white ;
 }
-#btn{
+.menu .searchbox .searchlogo{
+    position: relative;
     background-color: #79c1d8;
     color: white;
     border: transparent;
@@ -118,40 +124,119 @@ nav ul li a:hover{
     cursor: pointer;
 
 }
-#btn:hover{
+.menu #btn:hover{
     background-color: transparent;
     transition: 0.4s;
 
 }
 p{
     margin-top: 3rem;
-    margin-left: 20.5rem;
-    margin-right: 20.5rem;
-    display: grid;
-    justify-items: center;
-    justify-content: end;
+    padding-left: 10.5rem;
+    padding-right: 10.5rem;
+    text-align: center;
     font-size: 1.5rem;
     box-sizing:border-box;
 
 }
-#example{
-
-    margin-top: 1rem;
-    display: flex;
-    justify-content:space-evenly;
-    flex-direction: row;
-    align-items: flex-end;
-    padding-left: var(--padding);
-    padding-right: var(--padding);
-    Cursor: pointer;
-    list-style: none;
+.examples{
+    padding-left: 25.5rem;
+    padding-right: 25.5rem;
 }
-#example:hover{
+.examples ul{
+    display: grid;
+    grid-template-columns: repeat(6 ,1fr);
+    grid-auto-flow: row;
+    margin-top: 3rem;
+    list-style: none;
+    justify-content: center;
+}
+
+.examples  ul .b {
+    margin: 0.8rem 1.5rem;
+    color: var(--nav-farbe);
+    text-transform: capitalize;
+    cursor: pointer;
+
+
+}
+.examples ul .b:hover{
+    color: var(--nav-text-farbe);
     text-decoration: underline;
-    text-decoration-color: var(--nav-text-farbe);
     transition: 0.4s;
 }
-#text{
-    cursor: text;
-    color: white;
+
+.tester{
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*flex-wrap: nowrap;*/
+
+    /*align-items: center;*/
+    color: black;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 90%;
+
+    left: 50%;
+
 }
+/*.socialmediaLogos::before {*/
+/*    content: "Hier ist der Text oben"; !* Der gewünschte Text *!*/
+/*    font-size: 24px;*/
+/*    color: white;*/
+/*    font-weight: bold;*/
+/*    text-align: center;*/
+/*    margin-bottom: 10px; !* Abstand zwischen Text und Icons *!*/
+/*}*/ /* TODO .tester ( der Text innerhalb den Icons zeigen )*/
+
+footer{
+}
+
+
+
+
+@media screen and (max-width: 850px) {
+    body{
+        position: fixed;
+    }
+    .menu{
+
+        display: flex;
+        flex-direction: column;
+    }
+    .menu h2{
+        align-self: start;
+    }
+    .menu ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .menu ul .a{
+        margin: 0.8rem 0.5rem;
+    }
+    .menu ul .a a{
+        text-decoration: none;
+        color: var(--nav-farbe);
+        text-transform: capitalize;
+    }
+    .menu ul .a a:hover{
+        color: var(--nav-text-farbe);
+        text-decoration: underline;
+        transition: 0.4s;
+    }
+    p{
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+
+    }
+
+    .examples{
+        order: 2;
+    }
+
+}
+        /*padding-right: 70rem;*/
+
+
+
+
