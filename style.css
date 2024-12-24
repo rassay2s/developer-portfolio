@@ -23,40 +23,28 @@ html{
     font-size: 16px;
     color: var(--nav-farbe);
 }
-
-
-.aboutme{
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    background-position: center;
-    background-size:cover;
-    position: relative;
-}
-
 .video-container {
-    position: absolute; /* Video bleibt an Ort und Stelle */
+    position: fixed; /* Video bleibt an Ort und Stelle */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     object-fit: cover;
     z-index: -1; /* Video wird hinter den Inhalt gesetzt */
     opacity: 0.7 /* Überflüssige Teile des Videos werden abgeschnitten */
 }
 
-
-
-
+/*Header*/
 h1{
     margin: 1.7rem 0;
     color: var(--h1-farbe);
     font-size: 4.65rem;
     /*align-self: center;*/
 }
-.main{
+.header #menuicon{
+    display: none;
+}
+.header .head{
     font-size: 2.2rem;
     letter-spacing: 0.12rem;
     cursor:pointer;
@@ -66,18 +54,14 @@ h1{
     transition: 0.4s;
     position: absolute;
 }
-.main:hover{
+.header .head:hover{
     text-decoration:underline ;
     text-decoration-color: var(--h1-farbe);
 }
 h3{
     font-size: 1.5rem;
 }
-.firstline{
-    font-size: 1.2rem;
-    letter-spacing: 0.12rem;
-    color: #edc3be;
-}
+
 span{
     color: var(--h1-farbe);
 }
@@ -98,33 +82,36 @@ span{
 
 /*}*/
 
-
-
-
-
-
 /*Menu WITHOUT SEARCH*/
-.navlist{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2.8rem;
-    padding-left: 25rem;
-    padding-right: var(--padding);
+
+.menu .fa{
+    display: none;
 }
 
-.navlist ul .navelem {
+.menu{
+    display: flex ;
+    flex-direction: row;
+    justify-items: center;
+    padding-top: 2.8rem;
+    padding-left: 45rem;
+    padding-right: var(--padding);
+
+
+
+}
+
+.menu .navlist  .navelem, .search {
     list-style: none;
     display: inline-block;
     margin: 0.8rem 1.5rem;
 }
-.navlist ul .navelem a{
+.menu .navlist .navelem a{
     text-decoration: none;
     color: var(--nav-farbe);
     text-transform: capitalize;
     cursor: pointer;
 }
-.navlist ul .navelem a::after{
+.menu .navlist .navelem  a::after{
     content: "";
     width: 0;
     height: 2px;
@@ -133,21 +120,15 @@ span{
     margin: auto;
     transition: 0.4s;
 }
-.navlist ul .navelem a:hover::after{
+.menu .navlist .navelem a:hover::after{
     width: 100%;
 }
-
 /*SEARCH left*/
-.search{
-    width: 330px;
-    float: left;
-    margin-left: 0.2rem;
-}
-.searchbox{
+.menu .navlist .searchbox{
     width: 200px;
     height: 40px;
     background: transparent;
-    border: 1px solid #edc3be;
+    border: 4px solid #F57847;
     margin-top: 0.1rem;
     color: white;
     border-right: none;
@@ -163,18 +144,21 @@ span{
 }
 
 /*searchlogo on the right*/
-.searchlogo{
+.menu .navlist .search .searchlogo {
     height: 40px;
     width: 50px;
-    background: #edc3be;
-    border: 2px solid #edc3be;
+    background: #F57847;
+    border: 4px solid #F57847;
     margin-top: 0.1rem;
-    color: white;
     border-left: none;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     cursor: pointer;
 }
+.menu .navlist .search span{ /*hier musste ich der span farbe ändern und nicht der button */
+    color: white;
+}
+
 .searchlogo:focus{
     outline: none;
 }
@@ -186,37 +170,149 @@ span{
     color: #000;
     vertical-align: middle;
 }
+.homescreen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    width: 100vw;
+    text-align: center;
+    padding: 0 var(--padding);
+    position: relative;
+    justify-content: space-around;
+    margin-top: 5rem;
+
+
+}
+.homescreen .homehead{
+    color: white;
+    font-size: 50px;
+    height: 1px;
+
+}
+.homescreen img{
+    width: 450px;
+    height: 300px;
+}
+.homescreen p{
+    line-height: 3rem;
+}
+.homescreen a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    border: 2px solid #FF3F3F;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: 0.4s;
+    background-color: #FF3F3F;
+    cursor: pointer;
+}
+.homescreen a:hover{
+    background-color: transparent;
+    color: black;
+
+}
+
+
+
+
+
+.aboutme{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-position: center;
+    background-size:cover;
+    position: relative;
+}
+
 
 /*Content*/
 .content{
     flex-grow: 1;
-    padding: 0 var(--padding);
+    padding:  var(--padding);
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    padding-top: 12rem;
+
+
+
+
 }
-.container-texts{
-    position: relative;
-    bottom: 70px;
+.content .container-texts{
+    /*position: static;*/
+    /*bottom: 70px;*/
+    line-height: 2rem;
+    width: 600px;
+
+   /*padding-bottom: 47rem;*/
+
 }
 
+
+
 /*Exampeles*/
-.examples a{
+.content .container2-texts{
+    width: 600px;
+    line-height: 2rem;
+
+}
+.content .container2-texts .examples{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-left: 2rem;
+    list-style: none;
+    flex-wrap: wrap;
+
+
+}
+
+.content .container2-texts .examples a{
     text-decoration: none;
     color: inherit; /*farbe der eltern klasse nehmen*/
 }
-.examples a:hover{
+.content .container2-texts .examples a:hover{
     color: var(--nav-text-farbe);
     text-decoration: underline;
     transition: 0.4s;
 }
+.content .contentfooter{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-top: 4rem ;
+    /*bild als hintergrund bild*/
+    background-image: url("fotos/img/foto1.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 2rem;
 
-.examples .listexamp{
-    display: grid;
-    grid-template-columns: repeat(3 ,2fr); /*3 Spalten 2 Zeilen*/
-    margin-top: 0.8rem;
-    list-style: none;
-    justify-items: center;
-    gap: 20px; /*Abstand zwischen den Elementen*/
+}
+.content p {
+    display: block;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+    transition: 0.4s;
+    background-color: rgba(0,0,0,0.5);
+
+}
+.content img{
+    width: 350px;
+    height: 500px;
+    border-radius: 10px;
+    border: transparent;
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
+    /*das bild soll in der mitte von den div sein*/
+    display: block;
+    margin: 0 auto;
+
 }
 
 
@@ -234,22 +330,15 @@ span{
     display: flex;
     flex-flow: column;
     padding-top: 3rem;
-
-
-
-    /*padding-right: 70rem;*/
-
-
 }
 
 .socialmedialogos .social img{
-    /*display:flex;*/
-    /*margin-left: 0.5rem;*/
-    /*border-radius: var(--border-radius);*/
+    display:flex;
+    margin-left: 0.5rem;
+    border-radius: var(--border-radius);
     position: sticky;
     width: var(--bilder-breite);
     height: var(--bilder-hoehe);
-
 }
 
 p{
@@ -259,7 +348,6 @@ p{
     text-align: center;
     font-size: 1.5rem;
     box-sizing:border-box;
-
 }
 
 
@@ -287,147 +375,92 @@ p{
 }
 /*TODO .tester ( der Text innerhalb den Icons zeigen )*/
 
-footer{
+footer p{
+    font-size: 16px;
 }
-
-
 
 @media (max-width: 700px) {
-    h1, h3, .firstline, .content, .container-texts{
-        font-size: 16px;
-        padding-top: 4rem;
+    .menu  {
+        position: fixed;
+        right: 0;
+        top :0;
+        padding-left: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: black;
+        z-index: 2;
+        opacity: 0.9;
+        padding-bottom: 10.8rem;
+        transition: 1s;
     }
-    .searchbox{
-        width: 80px;
+    .menu #closeicon {
+        position: inherit;
+        display: block;
+        color: white;
+        margin: 5px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding-top: 0.3rem;
+        padding-left: 12rem;
+
+
     }
-    .searchlogo{
-        width: 20px;
-    }
-    .menu {
-        position: fixed; /* Fixiert das Menü an der rechten Seite */
-        top: 0;
-        right: 0; /* Positioniert das Menü rechts */
-        width: 250px; /* Breite des Menüs */
-        height: 100vh; /* Menü nimmt die volle Höhe des Bildschirms ein */
-        background-color: black; /* Hintergrundfarbe */
-        z-index: 2; /* Stellt sicher, dass das Menü über anderen Elementen liegt */
+
+    .menu .navlist{
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Elemente oben ausrichten */
-
-        opacity: 0.7;
+        align-items: start;
+        justify-content: center;
+        padding-left: 3.8rem;
     }
-
-    /* Die Liste der Navigationselemente */
-    .navlist {
-        display: flex;
-        flex-direction: column; /* Links untereinander anordnen */
-        width: 100%; /* Volle Breite innerhalb des Menüs */
-        padding: 0;
-        margin: 0;
+    .menu .navlist .search{
+        display: none;
     }
-
-    .navlist li {
-        list-style: none;
-        margin: 1rem 0; /* Abstand zwischen den Links */
-        text-align: center;
-    }
-
-    .navlist a {
-        text-decoration: none;
-        color: white; /* Linkfarbe */
-        font-size: 1.2rem;
+    .menu .navlist .navelem{
+        margin: 1rem;
+        font-size:25px;
         font-weight: bold;
-        display: block;
-        transition: color 0.3s ease-in-out;
     }
-
-    .navlist a:hover {
-        color: yellow; /* Farbe beim Hover */
+   .content  {
+       flex-direction: column;
+        padding-left: 1rem;
+       padding-top: 3.8rem;
+       position: relative;
+       margin: 0.8rem;
+   }
+    .content .container-texts{
+        position: relative;
+        bottom: 0;
     }
-
-    /* Suchbox und Button innerhalb des Menüs */
-    .search {
+    .content .examples{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         margin-top: 2rem;
+        list-style: none;
+    }
+
+
+    .header{
         display: flex;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+    .header .head {
+       order: 1;
+        position: relative;
+    }
+    .header #menuicon{
+        display: block;
+        padding-top: 3.4rem;
+        padding-right: 1.8rem;
+        order: 2;
+        font-size: 1.5rem;
+    }
+    .footer{
+        display: block;
     }
 
-    .searchbox {
-        width: 150px;
-        height: 40px;
-        border: 1px solid white;
-        background: transparent;
-        color: white;
-        border-radius: 5px 0 0 5px;
-        padding: 0.5rem;
+
     }
-
-    .searchlogo {
-        height: 40px;
-        width: 50px;
-        background: #edc3be;
-        border: none;
-        border-radius: 0 5px 5px 0;
-        color: black;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .searchlogo span {
-        font-size: 20px;
-    }
-
-}
-/*@media screen and (max-width: 850px) {*/
-
-/*    .menu{*/
-/*        display: flex;*/
-/*        justify-content: space-between;*/
-/*        align-items: center;*/
-/*        padding-top: 2.8rem;*/
-/*        padding-left: var(--padding);*/
-/*        padding-right: var(--padding);*/
-
-
-/*        flex-direction: column;*/
-/*    }*/
-/*    .menu h2{*/
-/*        align-self: start;*/
-/*    }*/
-/*    .menu ul{*/
-/*        display: flex;*/
-/*        flex-direction: row;*/
-/*        align-items: center;*/
-/*    }*/
-/*    .menu ul .a{*/
-/*        margin: 0.8rem 0.5rem;*/
-/*    }*/
-/*    .menu ul .a a{*/
-/*        text-decoration: none;*/
-/*        color: var(--nav-farbe);*/
-/*        text-transform: capitalize;*/
-/*    }*/
-/*    .menu ul .a a:hover{*/
-/*        color: var(--nav-text-farbe);*/
-/*        text-decoration: underline;*/
-/*        transition: 0.4s;*/
-/*    }*/
-/*    p{*/
-/*        margin-left: 0.5rem;*/
-/*        margin-right: 0.5rem;*/
-
-/*    }*/
-
-/*    .examples{*/
-/*        order: 2;*/
-/*    }*/
-
-/*}*/
-        /*padding-right: 70rem;*/
-
-
-
-

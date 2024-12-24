@@ -7,91 +7,98 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
     <title>About me</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <script type="text/javascript" src="script.js"></script>
 </head>
 
+
 <body>
-
+<!-- Video-Element -->
+<video autoplay loop muted playsinline class="video-container">
+    <source src="fotos/img/background1.mp4" type="video/mp4">
+</video>
+<!--    Header  -->
+<div class ="header" id="headerId">
+    <h2 class="head">
+        <span>Sy</span>Factory</h2>
+    <i class="fa fa-bars" id="menuicon" onclick="openNav()"></i>
+</div>
+<!--    Navigation  -->
+<nav class ="menu" id="navmenu">
+    <i class="fa fa-window-close" id="closeicon" onclick="colseNav()"></i>
+    <ul class ="navlist">
+        <li class = "navelem"><a herf="#home">Home</a></li>
+        <li class = "navelem"><a herf="#home">AboutMe</a></li>
+        <li class = "navelem"><a herf="#service">Service</a></li>
+        <li class = "navelem"><a herf="#help">Help</a></li>
+        <li class = "navelem"><a herf="#contact">ContactMe</a></li>
+        <li class="search">
+            <label for="such"></label>
+            <input id = "such" class ="searchbox" type="search" name="" placeholder="search here">
+            <a href="#"><button  class ="searchlogo"><span class="material-symbols-outlined">search</span ></button></a>
+        </li>
+    </ul>
+</nav>
+<!--    Home  -->
 <section class="home" >
-
-</section>
-<section class="aboutme" id="home">
-        <!-- Video-Element -->
-        <video autoplay loop muted playsinline class="video-container">
-            <source src="fotos/img/background1.mp4" type="video/mp4">
-        </video>
-
-
-
-    <h2 class="main"><span>Sy</span>Academy</h2>
-
-        <nav class ="menu">
-            <div class="navlist">
-                <ul>
-                <li class = "navelem"><a herf="#home">Home</a></li>
-                <li class = "navelem"><a herf="#home">AboutMe</a></li>
-                <li class = "navelem"><a herf="#service">Service</a></li>
-                <li class = "navelem"><a herf="#help">Help</a></li>
-                <li class = "navelem"><a herf="#contact">ContactMe</a></li>
-            </ul>
-
-
-            <div class="search">
-                <label for="search"></label>
-                <input id = "search" class ="searchbox" type="search" name="" placeholder="search here">
-                <a href="#"><button  class ="searchlogo"><span class="material-symbols-outlined">search</span></button></a>
-                </div>
-            </div>
-            </nav>
-
-    <div class ="content">
-        <div class = "container-texts">
-            <h4 class = "firstline">Hello there here is my website</h4>
-            <h4>my name is <span>Rami</span></h4>
-            <h3>I'm studying at <span>Hochschule Bonn Rhein Sieg</span></h3>
-            <h4>and improving my programing skills in private.</h4>
-            <h3>I'm a <span>Full-Stack</span> developer.</h3>
-            <h4>I'v learned the important <span>programing languages</span> like:</h4>
-        </div>
-            <nav>
-                <div class ="examples">
-                    <ul class = "listexamp"><li class = "b"><a href="https://de.wikipedia.org/wiki/Lisp" target="_blank">LISP</a></li>
-                        <li class = "listelem"><a href="https://www.w3schools.com/cpp/default.asp" target="_blank">C++</a></li>
-                        <li class = "listelem"><a href="https://www.w3schools.com/java/default.asp" target="_blank">JAVA</a></li>
-                        <li class = "listelem"><a href="https://www.w3schools.com/c/index.php" target="_blank">C</a></li>
-                        <li class = "listelem"><a href="https://www.w3schools.com/css/default.asp">CSS/JAVA-Script</a></li>
-                        <li class = "listelem"><a href="https://www.w3schools.com/sql/default.asp" target="_blank">SQL</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
-
-
-<!--bilder-->
-    <aside class = "socialmedialogos">
-    <div class ="social">
-            <a href="https://www.instagram.com/al_rami.9/profilecard/?igsh=Mmw5NDUxOXNnMTd6"><img src="fotos/img/instagram.png" alt="Instagram logo"></a>
-            <a href="#"><img src="fotos/img/facebook.png" alt = "facebook logo"></a>
-            <a href="#"><img src="fotos/img/linkedIn.png" alt = "linkedin logo"></a>
-            <a href="#"><img src="fotos/img/icons8-github-64.png" alt="Github logo"></a>
+    <div class ="homescreen">
+        <h1 class ="homehead"><span>Welcome </span>to the <span>Sy</span>Factory, where <span>dreams</span> become <span>reality</span> </h1>
+        <p>specialize in creating custom <span>solutions</span> that solve complex challenges and drive business <span>success</span>.</p>
+        <a href="#service" class="btn">Discover Our Solutions</a>
+        <img src="fotos/img/solutions.png" alt ="education">
 
 
     </div>
+
+</section>
+<section class="aboutme" id="home">
+
+
+    <!--    Content  -->
+    <div class ="content">
+        <div class = "container-texts">
+            <h3><span>Welcome</span> to <span>Sy</span>Factory.</h3>
+            <h2>my name is <span>Rami</span></h2>
+            <h3>I'm studying at Hochschule <span>Bonn-Rhein-Sieg</span></h3>
+            <h3>I'm a <span>Full-Stack</span> developer.</h3>
+            <h3>I specialize in delivering complete end-to-end <span>web</span> and <span>application</span> development <span>solutions</span>.</h3>
+        </div>
+        <div class = "container2-texts">
+           <br>
+            <h3>With expertise in modern <span>frameworks</span> and tools like <span>React</span>, <span>Node.js</span>, <span>Angular</span>, <span>vaadin</span> and cloud technologies,<br> I ensure your <span>applications</span> are scalable, secure, and tailored to your <span>needs</span>.</h3>
+            <h3>I'v learned the important <span>programing </span>languages like:</h3>
+            <ul class ="examples">
+                    <li class = "listelem"><a href="https://de.wikipedia.org/wiki/Lisp" target="_blank">LISP</a></li>
+                    <li class = "listelem"><a href="https://www.w3schools.com/cpp/default.asp" target="_blank">C++</a></li>
+                    <li class = "listelem"><a href="https://www.w3schools.com/java/default.asp" target="_blank">JAVA</a></li>
+                    <li class = "listelem"><a href="https://www.w3schools.com/c/index.php" target="_blank">C</a></li>
+                    <li class = "listelem"><a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS/JAVA-Script</a></li>
+                    <li class = "listelem"><a href="https://www.w3schools.com/sql/default.asp" target="_blank">SQL</a></li>
+            </ul>
+        </div>
+        <div class ="contentfooter">
+            <p>What started as a <span>hobby</span> has grown into a <span>professional</span> career where I’ve helped businesses <span>succeed</span> through <span>technology</span>.</p>
+            <img src="fotos/img/foto1.jpg" alt = "you are not alone">
+        </div>
+    </div>
+
+<!--Sozial Media-->
+    <aside class = "socialmedialogos">
+        <div class ="social">
+            <a href="https://www.instagram.com/al_rami.9/profilecard/?igsh=Mmw5NDUxOXNnMTd6"><img src="fotos/img/instagram.png" alt="Instagram logo"></a>
+            <a href="#"><img src="fotos/img/facebook.png" alt = "facebook logo"></a>
+            <a href="#"><img src="fotos/img/linkedin.png" alt = "linkedin logo"></a>
+            <a href="#"><img src="fotos/img/icons8-github-64.png" alt="Github logo"></a>
+
+
+         </div>
     </aside>
 
 <!--    <h2 class = "tester" > Test</h2>-->
+<!--    Footer  -->
+    <footer><p>© 2024 Rami. All rights reserved.</p></footer>
 
-                <footer><p>© 2024 Rami. All rights reserved.</p></footer>
-
-
-<!--        <span style="position: fixed;top: 500px">-->
-<!--        <img src = "https://t4.ftcdn.net/jpg/00/70/80/25/360_F_70802530_H8G1qBsSSH5m8PljFoy0xkcusgQ0vCt3.jpg">-->
-<!--        <img src= "" alt = "Insta" >-->
-<!--        </span>-->
-<!--        <span style="position:relative; top: 700px; left: 20px">-->
-<!--            <a href = "http://ramiassayed.live/">Website</a>-->
-<!--           </span>-->
-<!--            <a href = "https://www.instagram.com/al_rami.9/profilecard/?igsh=Mmw5NDUxOXNnMTd6">Instagram</a>-->
 </section>
+
 </body>
 </html>
