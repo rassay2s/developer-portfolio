@@ -403,28 +403,23 @@ span{
 }
 
                                                 /*Socialmedia Logos*/
-.socialmedialogos{
+.socialmedialogos .social{
     position: fixed;
-    z-index: 100000;
+    top : 50%;
+    right: 0;
+    padding-right: 2rem;
+    z-index: 10000;
 }
+.socialmedialogos .social a {
 
-.social{
-    /*display: flex;*/
-    /*flex-flow: column;*/
-    /*background-color: black;*/
-    /*justify-content: space-between;*/
-    /*align-items: end ;*/
-    ;
-}
-.social a{
-    display: inline-block;
-    background-color: black;
-}
 
-.social  a img{
+}
+.socialmedialogos .social a img{
+    display: block;
     width: var(--bilder-breite);
     height: var(--bilder-hoehe);
     border-radius: var(--border-radius);
+    margin-left: 0.5rem;
 
 }
 
