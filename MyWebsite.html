@@ -33,21 +33,25 @@
     <i class="fa fa-bars" id="menuicon" onclick="openNav()"></i>
 </div>
                                             <!--    Navigation  -->
-<nav class ="menu" id="navmenu">
-    <i class="fa fa-window-close" id="closeicon" onclick="colseNav()"></i>
-    <ul class ="navlist">
-        <li class = "navelem"><a herf="#home">Home</a></li>
-        <li class = "navelem"><a herf="#About">AboutMe</a></li>
-        <li class = "navelem"><a herf="#service">Service</a></li>
-        <li class = "navelem"><a herf="#help">Help</a></li>
-        <li class = "navelem"><a herf="#contact">ContactMe</a></li>
-        <li class="search">
-            <label for="such"></label>
-            <input id = "such" class ="searchbox" type="search" name="" placeholder="search here">
-            <a href="#"><button  class ="searchlogo"><span class="material-symbols-outlined">search</span ></button></a>
-        </li>
-    </ul>
-</nav>
+<section class="navigation">
+    <nav class ="menu" id="navmenu">
+        <div class = "test">
+            <i class="fa fa-window-close" id="closeicon" onclick="colseNav()"></i>
+            <ul class ="navlist">
+                <li class = "navelem"><a herf="#home">Home</a></li>
+                <li class = "navelem"><a herf="#About">AboutMe</a></li>
+                <li class = "navelem"><a herf="#service">Service</a></li>
+                <li class = "navelem"><a herf="#help">Help</a></li>
+                <li class = "navelem"><a herf="#contact">ContactMe</a></li>
+                <li class="search">
+                    <label for="such"></label>
+                    <input id = "such" class ="searchbox" type="search" name="" placeholder="search here">
+                    <a href="#"><button  class ="searchlogo"><span class="material-symbols-outlined">search</span ></button></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
                                             <!--      Home      -->
 <section class="home" >
     <div class ="homescreen">
@@ -92,7 +96,7 @@
 <section class = "services">
     <h1>Custom <span>Solutions</span> for Every <span>Need</span></h1>
     <p>Complete solutions for websites and applications are offered, covering both frontend and backend development. Every project is built to ensure functionality, security, and scalability.</p>
-    <div class = "allservices">
+    <div  id = "alls" class = "allservices" >
         <div class = "websiteDev">
             <h3>Website Development</h3>
             <img src="fotos/img/websiteDev.png" alt="Blog">

@@ -65,29 +65,38 @@ span{
 }
 
 /*Menu Nav*/
-.menu .fa{
+
+.test .fa{
     display: none;
 }
 .menu{
-    display: flex ;
-    flex-direction: row;
-    justify-items: center;
-    padding-top: 2.8rem;
-    padding-left: 45rem;
-    padding-right: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 15%;
+    align-items: center;
 }
-.menu .navlist  .navelem, .search {
+.test{
+    flex: 1;
+    text-align: right;
+    /*flex-direction: row;*/
+    /*justify-items: center;*/
+    /*padding-top: 2.8rem;*/
+    /*padding-left: 45rem;*/
+    /*padding-right: var(--padding);*/
+}
+.test .navlist  .navelem, .search {
     list-style: none;
     display: inline-block;
     margin: 0.8rem 1.5rem;
+    position: relative;
 }
-.menu .navlist .navelem a{
+.test .navlist .navelem a{
     text-decoration: none;
     color: var(--nav-farbe);
     text-transform: capitalize;
     cursor: pointer;
 }
-.menu .navlist .navelem  a::after{
+.test .navlist .navelem  a::after{
     content: "";
     width: 0;
     height: 2px;
@@ -96,11 +105,11 @@ span{
     margin: auto;
     transition: 0.4s;
 }
-.menu .navlist .navelem a:hover::after{
+.test .navlist .navelem a:hover::after{
     width: 100%;
 }
 /*SEARCH left*/
-.menu .navlist .searchbox{
+.test .navlist .searchbox{
     width: 200px;
     height: 40px;
     background: transparent;
@@ -119,7 +128,7 @@ span{
     opacity: 0.5;
 }
 /*searchlogo on the right*/
-.menu .navlist .search .searchlogo {
+.test .navlist .search .searchlogo {
     height: 40px;
     width: 50px;
     background: #F57847;
@@ -130,7 +139,7 @@ span{
     border-top-right-radius: 5px;
     cursor: pointer;
 }
-.menu .navlist .search span{ /*hier musste ich der span farbe ändern und nicht der button */
+.test .navlist .search span{ /*hier musste ich der span farbe ändern und nicht der button */
     color: white;
 }
 .searchlogo:focus{
@@ -144,17 +153,90 @@ span{
     color: #000;
     vertical-align: middle;
 }
+@media (max-width: 700px) {
 
+    .test .navlist .navelem{
+        display: block;
+    }
+    .test {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-height: 150vh;
+        /*z-index: 2000;*/
+
+        background-color: black;
+        opacity: 0.9;
+        /*height: 100vh;*/
+        width: 200px;
+        transition: 1s;
+        display: none;
+
+    }
+
+
+    .test .search{
+        display: none;
+    }
+
+     .test #closeicon{
+        display: inherit;
+        margin: 5px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding-top: 0.3rem;
+        text-align: right;
+    }
+
+
+    /*.menu  {*/
+        /*    position: fixed;*/
+        /*    right: 0;*/
+        /*    top :0;*/
+        /*    padding-left: 0;*/
+        /*    width: 100%;*/
+        /*    min-height: 100vh;*/
+        /*    background-color: black;*/
+        /*    z-index: 2;*/
+        /*    opacity: 0.9;*/
+        /*    !*padding-bottom: 10.8rem;*!*/
+        /*    transition: 1s;*/
+        /*}*/
+        /*.menu #closeicon {*/
+        /*    position: inherit;*/
+        /*    display: block;*/
+        /*    color: white;*/
+        /*    margin: 5px;*/
+        /*    font-size: 1.5rem;*/
+        /*    cursor: pointer;*/
+        /*    padding-top: 0.3rem;*/
+        /*    padding-left: 12rem;*/
+        /*}*/
+        /*.menu .navlist{*/
+        /*    display: flex;*/
+        /*    flex-direction: column;*/
+        /*    align-items: start;*/
+        /*    justify-content: center;*/
+        /*    padding-left: 3.8rem;*/
+        /*}*/
+        /*.menu .navlist .search{*/
+        /*    display: none;*/
+        /*}*/
+        /*.menu .navlist .navelem{*/
+        /*    margin: 1rem;*/
+        /*    font-size:25px;*/
+        /*    font-weight: bold;*/
+        /*}*/
+}
                                                      /*home Section*/
 .homescreen{
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 70vh;
-    min-width: 100vw;
+    /*min-width: 100vw;*/
     text-align: center;
     padding: 0 var(--padding);
-    position: relative;
     justify-content: space-around;
     margin-top: 5rem;
 }
@@ -185,15 +267,42 @@ span{
     background-color: transparent;
     color: black;
 }
-
-
+@media (max-width: 700px) {
+    .home{
+        padding: 0;
+        margin: 0;
+    }
+    .homescreen{
+        flex: 1;
+        align-content: center;
+        text-align: center;
+        justify-items: center;
+    }
+    .homescreen .homehead {
+        font-size: 25px;
+        height: 0;
+    }
+    .homescreen p{
+        font-size: 20px;
+        line-height: 1rem;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        padding: 0;
+        text-align: center;
+    }
+    .homescreen img{
+        width: 300px;
+        height: 200px;
+        margin-left: 2rem;
+    }
+}
                                                  /*about me section*/
 .aboutme{
-    width: 100%;
+    min-width: 100%;
     min-height: 100vh;
     overflow: hidden;
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
     background-position: center;
     background-size:cover;
     position: relative;
@@ -221,7 +330,6 @@ span{
 }
 .content .container2-texts .examples{
     display: flex;
-    /*flex-direction: row;*/
     justify-content: space-between;
     margin-top: 2rem;
     padding-left: 2rem;
@@ -262,12 +370,49 @@ span{
     display: block;
     margin: 0 auto;
 }
-
+@media (max-width: 700px) {
+    .aboutme{
+        flex-direction: column;
+        background-size: cover;
+        margin: 0;
+        /*max-width: 100vw;*/
+        padding: 0 ;
+        align-content: center;
+    }
+    .content{
+        border-radius: 2rem;
+    }
+    .content .container-texts h1{
+        font-size: 30px;
+    }
+    .content .container-texts h3{
+        font-size: 20px;
+    }
+    .content .container-texts h2{
+        font-size: 20px;
+    }
+    .content .container2-texts h3{
+        font-size: 20px;
+    }
+    .content .container2-texts .examples{
+        font-size: 16px;
+        padding: 0;
+    }
+    .coontent .contentfooter{
+        background-size: cover;
+        margin: 0;
+    }
+    .content .contentfooter img{
+        width: 300px;
+        height: 400px;
+    }
+}
                                                 /*services Section*/
 .services{
     text-align: center;
     margin-top: 2rem;
     padding: var(--padding);
+
 }
 .services p{
     margin-bottom: 2rem;
@@ -281,6 +426,11 @@ span{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-gap: 1rem;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+.allservices.visible {
+    opacity: 1; /* Sichtbar */
 }
 .allservices h3{
     font-size:25px;
@@ -334,6 +484,35 @@ span{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     cursor: pointer;
 }
+@media (max-width: 700px) {
+    .services{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /*max-width: 600px;*/
+        text-align: center;
+        padding: 0 ;
+    }
+    .services h1{
+        font-size: 30px;
+        margin-bottom: 1rem;
+    }
+    .services p{
+        font-size: 16px;
+        text-align: center;
+        padding: 0;
+        align-self: center;
+        margin: 0 0 2rem;
+    }
+    .allservices{
+        display: flex;
+        flex-direction: column;
+        padding: 0 0.5rem 0 0.5rem;
+        align-items: center;
+        max-width: 600px;
+        text-align: center;
+    }
+}
                                             /*Help section*/
 .helpcontent{
     display : flex;
@@ -343,7 +522,6 @@ span{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     padding: var(--padding);
     margin: 0 auto;
-
 }
 .faq{
     margin-top: 2rem;
@@ -369,6 +547,24 @@ span{
     transform: scale(1.1);
     color: white;
     transition: 0.4s;
+}
+@media (max-width: 700px) {
+    .help{
+        padding: 0 ;
+        margin: 2rem  0 0;
+    }
+    .helpcontent{
+        flex: 1;
+        border-radius: 2rem;
+    }
+    .helpcontent h1{
+        font-size: 30px;
+    }
+    .helpcontent p{
+        font-size: 16px;
+        padding: 0 0 0 0.7rem;
+        margin:0;
+    }
 }
                                                 /*Contact me section */
 .contactcontent{
@@ -401,7 +597,34 @@ span{
     border-radius: 20px;
     flex-basis: 50rem;
 }
+.contactcontent .contactinfo p:hover{
+    background-color: #FF3F3F;
+    color: black;
+    transition: 0.4s;
+}
+@media (max-width: 700px){
+    .contact{
+        padding: 0;
+        margin: 2rem 0 0;
+    }
+    .contactcontent{
+        padding: 0;
+        margin: 0;
+    }
+    .contactcontent h1{
+        font-size: 30px;
+    }
+    .contactcontent p{
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+    }
+    .contactcontent .contactinfo p{
+       width: 150px;
+        margin: 0.5rem;
+    }
 
+}
                                                 /*Socialmedia Logos*/
 .socialmedialogos .social{
     position: fixed;
@@ -410,20 +633,19 @@ span{
     padding-right: 2rem;
     z-index: 10000;
 }
-.socialmedialogos .social a {
-
-
-}
 .socialmedialogos .social a img{
     display: block;
     width: var(--bilder-breite);
     height: var(--bilder-hoehe);
     border-radius: var(--border-radius);
     margin-left: 0.5rem;
-
 }
-
-
+@media (max-width: 700px) {
+    .socialmedialogos .social{
+        display: none;
+    }
+}
+                                                /*Footer*/
 p{
     margin-top: 3rem;
     padding-left: 10.5rem;
@@ -432,103 +654,13 @@ p{
     font-size: 1.5rem;
     box-sizing:border-box;
 }
-
-/*.socialmediaLogos::before {*/
-/*    content: "Hier ist der Text oben"; !* Der gewünschte Text *!*/
-/*    font-size: 24px;*/
-/*    color: white;*/
-/*    font-weight: bold;*/
-/*    text-align: center;*/
-/*    margin-bottom: 10px; !* Abstand zwischen Text und Icons *!*/
-/*}*/
-/*TODO .tester ( der Text innerhalb den Icons zeigen )*/
-
 footer p{
     font-size: 16px;
 }
-
 @media (max-width: 700px) {
-    .menu  {
-        position: fixed;
-        right: 0;
-        top :0;
-        padding-left: 0;
-        width: 250px;
-        min-height: 100vh;
-        background-color: black;
-        z-index: 2;
-        opacity: 0.9;
-        padding-bottom: 10.8rem;
-        transition: 1s;
-    }
-    .menu #closeicon {
-        position: inherit;
-        display: block;
-        color: white;
-        margin: 5px;
-        font-size: 1.5rem;
-        cursor: pointer;
-        padding-top: 0.3rem;
-        padding-left: 12rem;
-
-
+    footer p{
+        padding: 0;
+        margin: 0;
     }
 
-    .menu .navlist{
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        padding-left: 3.8rem;
-    }
-    .menu .navlist .search{
-        display: none;
-    }
-    .menu .navlist .navelem{
-        margin: 1rem;
-        font-size:25px;
-        font-weight: bold;
-    }
-   .content  {
-       flex-direction: column;
-        padding-left: 1rem;
-       padding-top: 3.8rem;
-       position: relative;
-       margin: 0.8rem;
-   }
-    .content .container-texts{
-        position: relative;
-        bottom: 0;
-    }
-    .content .examples{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 2rem;
-        list-style: none;
-    }
-
-
-    .header{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-    }
-    .header .head {
-       order: 1;
-        position: relative;
-    }
-    .header #menuicon{
-        display: block;
-        padding-top: 3.4rem;
-        padding-right: 1.8rem;
-        order: 2;
-        font-size: 1.5rem;
-    }
-    .footer{
-        display: block;
-    }
-
-
-    }
+}
