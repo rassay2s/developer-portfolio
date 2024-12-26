@@ -1,11 +1,15 @@
 // close icon
 function colseNav(){
     let navMenu = document.getElementById('navmenu');
+    let social = document.getElementById('socialId');
     navMenu.style.right = "-300px";
+    social.style.right = "-300px";
 }
 function openNav(){
     let navMenu = document.getElementById('navmenu');
+    let social = document.getElementById('socialId');
     navMenu.style.right = "0";
+    social.style.right = "0";
 }
 window.addEventListener('scroll', function(){
 
