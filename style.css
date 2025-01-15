@@ -311,19 +311,24 @@ span{
     transition: 0.4s;
 }
 /*the four child divs*/
-.allservices .websiteDev:hover{
-    transform: scale(1.1);
-    transition: 0.4s;
-}
-.allservices .webApp:hover{
-    transform: scale(1.1);
-    transition: 0.4s;
-}
-.allservices .backend:hover{
-    transform: scale(1.1);
-    transition: 0.4s;
-}
-.allservices .api:hover{
+/*.allservices .websiteDev:hover{*/
+/*    transform: scale(1.1);*/
+/*    transition: 0.4s;*/
+/*}*/
+/*.allservices .webApp:hover{*/
+/*    transform: scale(1.1);*/
+/*    transition: 0.4s;*/
+/*}*/
+/*.allservices .backend:hover{*/
+/*    transform: scale(1.1);*/
+/*    transition: 0.4s;*/
+/*}*/
+/*.allservices .api:hover{*/
+/*    transform: scale(1.1);*/
+/*    transition: 0.4s;*/
+/*}*/
+/*kombinator selektor*/
+.allservices > div:hover{
     transform: scale(1.1);
     transition: 0.4s;
 }
@@ -659,7 +664,7 @@ footer p{
         grid-template-columns: repeat(2,1fr);
     }
 }
-@media screen and (min-width: 800px) and (max-width: 1050px){
+@media screen and (min-width: 800px) and (max-width: 1000px){
     .menu{
         padding: 0;
         margin: 0;

@@ -1,4 +1,6 @@
 // close icon
+let isLoadEventActive = false;
+
 function colseNav(){
     let navMenu = document.getElementById('navmenu');
     let social = document.getElementById('socialId');
@@ -15,9 +17,17 @@ window.addEventListener('scroll', function(){
 
     const services = document.querySelector('.allservices');
     const scrollnum= 1800;
-    if(window.scrollY > scrollnum){
+    if(isLoadEventActive) return;
+    if(window.scrollY > scrollnum ){
         services.classList.add('visible');
 }else {
         services.classList.remove('visible');
     }
 });
+window.addEventListener('load', function (e) {
+    const serv = document.getElementById('all');
+    serv.classList.add('visible');
+    isLoadEventActive = true;
+
+});
+
