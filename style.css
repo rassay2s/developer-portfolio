@@ -8,7 +8,7 @@
     --bilder-hoehe : 100%;
     --nav-farbe : #ffffff;
     --nav-text-farbe : rgba(144, 216, 136, 0.72);
-    --padding : 8%;
+    --padding : 5%;
     --h1-farbe : #a0cf8b;
 }
 *{
@@ -153,29 +153,29 @@ span{
     vertical-align: middle;
 }
                                                      /*home Section*/
-.homescreen{
+.homescreen {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 70vh;
+    min-height: 100vh;
     /*min-width: 100vw;*/
     text-align: center;
-    padding: 0 var(--padding);
-    justify-content: space-around;
-    margin-top: 5rem;
+
+    padding-top: 2rem;
+    /*padding: 0 var(--padding);*/
+    /*justify-content: space-around;*/
 }
 .homescreen .homehead{
     color: white;
     font-size: 50px;
-    height: 1px;
+    /*height: 1px;*/
 }
 .homescreen img{
     width: 450px;
     height: 300px;
+
 }
-.homescreen p{
-    line-height: 3rem;
-}
+
 .homescreen a{
     text-decoration: none;
     color: white;
@@ -186,6 +186,7 @@ span{
     transition: 0.4s;
     background-color: #FF3F3F;
     cursor: pointer;
+    margin: 2rem;
 }
 .homescreen a:hover{
     background-color: transparent;
@@ -206,13 +207,13 @@ span{
 .content{
     flex-grow: 1;
     padding: 2%;
-    margin-top: 8rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background: rgba(0,0,0,0.5);
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    /*background: rgba(0,0,0,0.5);*/
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
 }
 .content .container-texts{
     line-height: 2rem;
@@ -268,7 +269,7 @@ span{
                                          /*services Section*/
 .services{
     text-align: center;
-    margin-top: 2rem;
+    /*margin-top: 2rem;*/
     padding: var(--padding);
 }
 .services p{
@@ -285,6 +286,7 @@ span{
     grid-gap: 1rem;
     opacity: 0;
     transition: opacity 2s ease;
+
 }
 .allservices.visible {
     opacity: 1; /* Sichtbar */
@@ -331,15 +333,18 @@ span{
 .allservices > div:hover{
     transform: scale(1.1);
     transition: 0.4s;
+    background: rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 .allservices div{
-    padding: 2rem;
+    padding: 3rem;
 }
 .allservices .webApp img{
     width: 200px;
     height: 100px;
     margin-bottom: 3.1rem;
 }
+
 .websiteDev , .webApp, .backend ,.api{
     border-radius: 20px;
     background: rgba(0,0,0,0.5);
@@ -351,7 +356,7 @@ span{
     display : flex;
     flex-direction: column;
     text-align: center;
-    background: rgba(0,0,0,0.5);
+    /*background: rgba(0,0,0,0.5);*/
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     padding: var(--padding);
     margin: 0 auto;
@@ -380,6 +385,38 @@ span{
     transform: scale(1.1);
     color: white;
     transition: 0.4s;
+}
+                                            /*Weather Table*/
+.weather{
+    padding: 5rem 0;
+}
+.weather h1{
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.weather span{
+    color: white;
+}
+#weatherTable{
+    margin: auto;
+}
+
+#weatherTable tr:nth-child(odd){
+    background-color: rgba(0,0,0,0.5);
+}
+
+#weatherTable tr:nth-child(even){
+    background-color: rgba(0,0,0,0.7);
+}
+
+#weatherTable th{
+    padding: 10px;
+    color: white;
+}
+
+#weatherTable td{
+    padding: 10px;
+    color: white;
 }
                                                 /*Contact me section */
 .contactcontent{
@@ -417,6 +454,86 @@ span{
     color: black;
     transition: 0.4s;
 }
+                                /* contact me Form  */
+.contact-container {
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    width: 600px;
+    margin: 2rem auto;
+    color: #f5f5f5;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.contact-container h1{
+    color: white;
+}
+
+.contact-container form label {
+    display: block;
+    font-weight: bold;
+    margin: 1rem 0 0.5rem 0;
+    color: #f5f5f5;
+    font-size: 1rem;
+}
+
+.contact-container form input,
+.contact-container form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(160, 207, 139, 0.8);
+    border-radius: 8px;
+    background-color: #333;
+    color: #f5f5f5;
+    font-size: 1rem;
+    font-family: var(--schriftart);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-container form input::placeholder,
+.contact-container form textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.contact-container form input:focus,
+.contact-container form textarea:focus {
+    outline: none;
+    border-color: #a0cf8b;
+    box-shadow: 0 0 8px rgba(160, 207, 139, 0.8);
+}
+
+
+.contact-container > form > button {
+    display: block;
+    margin: auto;
+    background-color: #a0cf8b;
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-container form button:hover {
+    background-color: #8ec074;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(160, 207, 139, 0.5);
+}
+
+.contact-container #response-message {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #a0cf8b;
+    font-style: italic;
+}
+
                                                 /*Socialmedia Logos*/
 .socialmedialogos .social{
     position: fixed;
@@ -594,6 +711,7 @@ footer p{
     .help{
         padding: 0 ;
         margin: 2rem  0 0;
+        overflow-y: hidden;
     }
     .helpcontent{
         flex: 1;
@@ -606,6 +724,41 @@ footer p{
         font-size: 16px;
         padding: 0 0 0 0.7rem;
         margin:0;
+    }
+    .weather{
+        padding: 5rem 0;
+        margin: 0;
+
+    }
+    .weather h1{
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+    .weather span{
+        color: white;
+    }
+    #weatherTable{
+        margin: auto;
+        min-width: 100vw;
+        font-size: 14px;
+    }
+
+    #weatherTable tr:nth-child(odd){
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    #weatherTable tr:nth-child(even){
+        background-color: rgba(0,0,0,0.7);
+    }
+
+    #weatherTable th{
+        padding: 5px;
+        color: white;
+    }
+
+    #weatherTable td{
+        padding: 5px;
+        color: white;
     }
     .contact{
         padding: 0;
@@ -642,6 +795,13 @@ footer p{
     }
 }
 @media screen and (min-width: 550px)and (max-width: 800px){
+    html, body {
+        /*height: 100%;*/
+        margin: 0;
+        padding: 0;
+        display:none;
+        /*flex-direction: column;*/
+    }
     .test .navlist{
         flex:1;
         font-size: 20px;
@@ -665,6 +825,13 @@ footer p{
     }
 }
 @media screen and (min-width: 800px) and (max-width: 1000px){
+    html, body {
+        /*height: 100%;*/
+        margin: 0;
+        padding: 0;
+        display:none;
+        /*flex-direction: column;*/
+    }
     .menu{
         padding: 0;
         margin: 0;
