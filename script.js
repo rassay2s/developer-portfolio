@@ -141,7 +141,18 @@ function getWeatherData() {
             console.error("Error fetching weather data", error);
         });
 }
-// Simulierte Funktion zum Senden von Daten (kein Server benötigt)
+//
+// import { showAlert } from './alertModule.js';
+//
+// // Button auswählen
+// const alertButton = document.getElementById("alertButton");
+//
+// // Event-Listener hinzufügen
+// if (alertButton) {
+//     alertButton.addEventListener("click", () => {
+//         showAlert();
+//     });
+// }
 
 
 

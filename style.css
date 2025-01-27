@@ -282,10 +282,12 @@ span{
 /*allservices div*/
 .allservices{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    /*grid-template-columns: repeat(4,1fr);*/
     grid-gap: 1rem;
     opacity: 0;
     transition: opacity 2s ease;
+
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
 
 }
 .allservices.visible {
@@ -306,11 +308,14 @@ span{
 .allservices img{
     width: 150px;
     height: 150px;
-    margin-top : 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    /*margin-top : 1rem;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
     display: block;
-    transition: 0.4s;
+    /*transition: 0.4s;*/
+
+    margin: 1rem auto 1.5rem auto;
+    transition: transform 0.4s ease, filter 0.4s ease;
 }
 /*the four child divs*/
 /*.allservices .websiteDev:hover{*/
@@ -351,6 +356,9 @@ span{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     cursor: pointer;
 }
+
+
+
                                             /*Help section*/
 .helpcontent{
     display : flex;
@@ -799,7 +807,6 @@ footer p{
         /*height: 100%;*/
         margin: 0;
         padding: 0;
-        display:none;
         /*flex-direction: column;*/
     }
     .test .navlist{
@@ -823,13 +830,13 @@ footer p{
         display: grid;
         grid-template-columns: repeat(2,1fr);
     }
+
 }
 @media screen and (min-width: 800px) and (max-width: 1000px){
     html, body {
         /*height: 100%;*/
         margin: 0;
         padding: 0;
-        display:none;
         /*flex-direction: column;*/
     }
     .menu{
