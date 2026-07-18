@@ -1,0 +1,10 @@
+{
+  "name": "developer-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check assets/js/main.js && node --check assets/js/faq.js && node --check assets/js/contact.js",
+    "test": "npm run check && node --test"
+  }
+}
